@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "976f01b3ac595ff715fabdcb0dd650a4",
+    "content-hash": "fc72f684a5aa5df07fa35f934a56fb09",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -67,6 +67,57 @@
                 }
             ],
             "time": "2023-11-12T22:16:48+00:00"
+        },
+        {
+            "name": "paragonie/recaptcha",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/recaptcha.git",
+                "reference": "79b456233bba20bfee7394ae69478610c582b07d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/recaptcha/zipball/79b456233bba20bfee7394ae69478610c582b07d",
+                "reference": "79b456233bba20bfee7394ae69478610c582b07d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "vimeo/psalm": "^0|^1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A fork of Google's PHP ReCAPTCHA Client with Proxy support.",
+            "homepage": "http://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "proxy",
+                "recaptcha",
+                "spam"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/forum/#!forum/recaptcha",
+                "source": "https://github.com/google/recaptcha"
+            },
+            "time": "2017-11-05T19:10:38+00:00"
         },
         {
             "name": "phpoption/phpoption",
