@@ -12,6 +12,20 @@ a {
   text-decoration: none;
 }
 
+.single-post-heading {
+  font-weight: 800 !important;
+ 
+}
+
+/* THIRD PARTY PACKAGES STYLES */
 #toast-container > div {
     opacity:1;
+}
+
+.ck.ck-editor {
+  width: 100% !important;
+}
+
+ .ck-editor__editable {
+  min-height: 150px;
 }

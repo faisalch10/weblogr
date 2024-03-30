@@ -15,13 +15,14 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/content-styles.css" />
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="index.php">
-        <i class="bi bi-pen me-2"></i>BlogVista</a>
+        <i class="bi bi-pen me-2"></i>Weblogr</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,11 +61,11 @@
           ?>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href='login.php <?= $page === 'login.php' ? 'active' : '' ?>' class="nav-link active" aria-current="page"
+              <a href='login.php' class="nav-link <?= $page === 'login.php' ? 'active' : '' ?>" aria-current="page"
                 href="#">Login</a>
             </li>
             <li class="nav-item">
-              <a href='register.php <?= $page === 'register.php' ? 'active' : '' ?>' class="nav-link" href="#"> Register
+              <a href='register.php' class="nav-link  <?= $page === 'register.php' ? 'active' : '' ?>" href="#"> Register
               </a>
             </li>
           </ul>

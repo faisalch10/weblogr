@@ -5,6 +5,8 @@
 
 <?php
 if (isset($_POST['submit'])) {
+  print_r($_POST);
+
   $update_id = $_GET['id'];
   $title = $_POST['title'];
   $description = $_POST['description'];
@@ -55,62 +57,80 @@ $row_category_id = $row["category_id"];
 ?>
 
 
-<div class="container">
+<div class="container ckeditor-container">
   <div class="row justify-content-center pt-5">
-    <div class="col-lg-5 col-12">
-      <a href='profile.php' type="button" class="btn btn-light mt-4">
+    <div class="col-lg-8 col-12">
+      <a href='profile.php' type="button" class="btn btn-light mt-3">
         <i class="bi bi-arrow-left-circle me-3"></i>Back</a>
       <div class="mt-5">
         <h1 class="text-center">
           <i class="bi bi-pencil me-3"></i>Edit Post
         </h1>
         <form action="edit-post.php?id=<?= $row_id; ?>" method="POST" class="mt-5">
-          <div class="input-group mb-3">
-            <input name="title" type="text" class="form-control" placeholder="Enter blog post title"
-              value="<?= $row_title; ?>" />
-          </div>
-          <div class="input-group mb-3">
-            <input name="description" type="text" class="form-control" placeholder="Enter your blog post description"
-              value="<?= $row_description; ?>" />
-          </div>
 
-          <div class="input-group mb-3">
-            <select class="form-select" name="category_id" aria-label="Default select example">
+          <div class="row">
 
-              <?php
-              $get_categories_query = "SELECT * FROM categories";
-              $execute_get_categories_query = mysqli_query($conn, $get_categories_query);
-              while ($data = mysqli_fetch_array($execute_get_categories_query)) {
-                $cat_id = $data['id'];
-                $cat_name = $data['name'];
-                ?>
-                <option value="<?= $cat_id; ?>" <?= ($cat_id == $row_category_id) ? "selected" : ""; ?>>
-                  <?= $cat_name ?>
-                </option>
-                <?php
-              }
-              ?>
-            </select>
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="form-check form-switch">
-              <input <?= $row_is_draft == 1 ? "checked" : ""; ?> name="is_draft" value="1" class="form-check-input"
-                type="checkbox">
-              <label class="form-check-label">
-                Save post as draft
-              </label>
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input name="title" type="text" class="form-control" placeholder="Enter blog post title"
+                  value="<?= $row_title; ?>" />
+              </div>
             </div>
-          </div>
 
-          <div class="input-group mb-3">
-            <div class="form-check form-switch">
-              <input <?= $row_is_private == 1 ? "checked" : ""; ?> name="is_private" value="1" class="form-check-input"
-                type="checkbox">
-              <label class="form-check-label">
-                Want to make your post private?
-              </label>
+            <div class="col-lg-6">
+              <div class="input-group">
+                <select class="form-select" name="category_id" aria-label="Default select example">
+
+                  <?php
+                  $get_categories_query = "SELECT * FROM categories";
+                  $execute_get_categories_query = mysqli_query($conn, $get_categories_query);
+                  while ($data = mysqli_fetch_array($execute_get_categories_query)) {
+                    $cat_id = $data['id'];
+                    $cat_name = $data['name'];
+                    ?>
+                    <option value="<?= $cat_id; ?>" <?= ($cat_id == $row_category_id) ? "selected" : ""; ?>>
+                      <?= $cat_name ?>
+                    </option>
+                    <?php
+                  }
+                  ?>
+                </select>
+              </div>
             </div>
+
+
+            <div class="col-lg-12 my-4">
+              <div class="input-group w-100">
+                <textarea rows="10" name="description" id="editor" placeholder="Enter your blog post description">
+                <?= $row_description; ?>
+                </textarea>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="input-group mb-3">
+                <div class="form-check form-switch">
+                  <input <?= $row_is_draft == 1 ? "checked" : ""; ?> name="is_draft" value="1" class="form-check-input"
+                    type="checkbox">
+                  <label class="form-check-label">
+                    Save post as draft
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="input-group mb-3">
+                <div class="form-check form-switch">
+                  <input <?= $row_is_private == 1 ? "checked" : ""; ?> name="is_private" value="1" class="form-check-input"
+                    type="checkbox">
+                  <label class="form-check-label">
+                    Want to make your post private?
+                  </label>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <input name="submit" type="submit" value="Update Blog Post" class="btn btn-dark btn-block w-100 mt-3 mb-3" />
@@ -121,4 +141,5 @@ $row_category_id = $row["category_id"];
   </div>
 </div>
 
+<?php include_once("./includes/ckeditor-scripts.php"); ?>
 <?php include_once("./includes/footer.php"); ?>

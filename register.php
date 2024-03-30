@@ -1,7 +1,7 @@
-<?php include_once("./includes/connection.php") ?>
-<?php include_once("./includes/session.php"); ?>
-<?php include_once("./includes/helpers.php"); ?>
-<?php include_once("./includes/header.php"); ?>
+<?php include_once ("./includes/connection.php") ?>
+<?php include_once ("./includes/session.php"); ?>
+<?php include_once ("./includes/helpers.php"); ?>
+<?php include_once ("./includes/header.php"); ?>
 
 <?php
 
@@ -82,4 +82,4 @@ if (isset($_POST["submit"])) {
   </div>
 </div>
 
-<?php include_once("./includes/footer.php") ?>
+<?php include_once ("./includes/footer.php") ?>
