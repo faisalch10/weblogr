@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
       // Hashing password
       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-      $query = "INSERT INTO users(name, username, email, password, user_type) VALUES('$name', '$username', '$email', '$hashed_password', 'user')";
+      $query = "INSERT INTO users(name, username, email, password, user_type, profile_image) VALUES('$name', '$username', '$email', '$hashed_password', 'user', 'default.png')";
       $result = mysqli_query($conn, $query);
 
       // $result -> return 1 if everything went ok otherwise 0
